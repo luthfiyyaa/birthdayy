@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy Birthday</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="name"></h1>
+        <img src="polaroid/IMG_4601.JPG" alt="">
+        <h4>Pibesdey yaah, semoga sehat selalu!!</h4>
+
+        <script>
+            const texts = ["Happy 20th Birthday Wisam Ahmada", "Love you❤️"];
+            let currentTextIndex = 0;
+            let charIndex = 0;
+            const nameSpan = document.getElementById("name");
+
+            function typeEffect() {
+                const currentText = texts[currentTextIndex];
+                if (charIndex < currentText.length) {
+                    nameSpan.textContent += currentText.charAt(charIndex); // Tambahkan karakter satu per satu
+                    charIndex++;
+                    setTimeout(typeEffect, 100); // Lanjutkan mengetik karakter berikutnya
+                } else {
+                    setTimeout(deleteEffect, 2000); // Tunggu 2 detik, lalu mulai menghapus teks
+                }
+            }
+
+            function deleteEffect() {
+                const currentText = texts[currentTextIndex];
+                if (charIndex > 0) {
+                    nameSpan.textContent = currentText.substring(0, charIndex - 1); // Hapus satu karakter
+                    charIndex--;
+                    setTimeout(deleteEffect, 100); // Lanjutkan menghapus karakter berikutnya
+                } else {
+                    currentTextIndex = (currentTextIndex + 1) % texts.length; // Pindah ke teks berikutnya
+                    setTimeout(typeEffect, 500); // Mulai mengetik teks baru
+                }
+            }
+            typeEffect();
+
+        </script>
+
+        <div class="lengkap">
+            <p>Mau tau pesan lengkapnya nggak? Buka di sini yaah?</p>
+            <a href="pesan.html">Lihat Pesan</a>
+        </div>
+
+        <audio id="birthdaySong" src="Happy_Birthday__Piano_Version__[_YouConvert.net_].mp3" autoplay muted></audio>
+        <button id="toggleSound">Matikan Musik ❌</button>
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('birthdaySong');
+        const toggleButton = document.getElementById('toggleSound');
+
+        // Mulai memutar musik saat halaman dimuat
+        audio.muted = false; // Hapus mute
+        audio.play().catch(() => {
+            toggleButton.textContent = 'Putar Musik 🎶';
+        });
+
+        // Tambahkan event listener untuk tombol
+        toggleButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                toggleButton.textContent = 'Matikan Musik ❌';
+            } else {
+                audio.pause();
+                toggleButton.textContent = 'Putar Musik 🎶';
+            }
+        });
+    });
+
+    </script>
+
+</body>
+</html>

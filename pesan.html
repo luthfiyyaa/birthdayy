@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Selamat Ultah</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Sayang ❤️❤️</h1>
+        <img src="polaroid/IMG_4565.JPG" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nesciunt optio quisquam vero sequi doloribus voluptates facere iusto corrupti quidem adipisci assumenda ipsam, praesentium facilis repellat possimus, placeat temporibus atque.</p>
+
+        <div class="reminder">
+            <h4>Jangan lupa kita besok ke Nara ya!! Sampai jumpa✋</h4>
+            <p>Aku mau kamu besok pakai bawahan jeans yaa!! Buat atasannya kaos aja gapapa❤️</p>
+            <a href="index.html">Kembali</a>
+        </div>
+        <audio id="birthdaySong" src="Happy_Birthday__Piano_Version__[_YouConvert.net_].mp3" autoplay muted></audio>
+        <button id="toggleSound">Matikan Musik ❌</button>
+    </div>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const audio = document.getElementById('birthdaySong');
+        const toggleButton = document.getElementById('toggleSound');
+
+        // Mulai memutar musik saat halaman dimuat
+        audio.muted = false; // Hapus mute
+        audio.play().catch(() => {
+            toggleButton.textContent = 'Putar Musik 🎶';
+        });
+
+        // Tambahkan event listener untuk tombol
+        toggleButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                toggleButton.textContent = 'Matikan Musik ❌';
+            } else {
+                audio.pause();
+                toggleButton.textContent = 'Putar Musik 🎶';
+            }
+        });
+    });
+
+    </script>
+</body>
+</html>

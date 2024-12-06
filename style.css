@@ -1,0 +1,124 @@
+/* Body: Perbaikan dan optimalisasi */
+body {
+    background: linear-gradient(135deg, #cee5f2, #7c98b3);
+    margin: 0;
+    font-family: 'Montserrat', serif;
+    display: flex;
+    justify-content: center; /* Menengahkan secara horizontal */
+    align-items: center;    /* Menengahkan secara vertikal */
+    min-height: 100vh;       /* Tinggi minimal penuh layar */
+    box-sizing: border-box;  /* Menghindari konflik lebar/padding */
+}
+
+/* Gambar */
+img {
+    width: 300px;
+    border-radius: 50px;
+}
+
+/* Container Utama */
+.container {
+    background-color: #7c98b3;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 50px;
+    max-width: 700px;
+    width: 100%; /* Fleksibel di layar kecil */
+    color: #ecdfcc;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+}
+
+/* Kontainer "lengkap" */
+.lengkap {
+    background-color: #accbe1;
+    padding: 5px 30px 20px 30px; /* Tambahkan ruang di dalam */
+    border-radius: 15px; /* Membuat sudut membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+    max-width: 400px; /* Batas lebar maksimal */
+    width: 90%; /* Responsif pada layar kecil */
+    margin: 20px auto; /* Buat elemen terpusat */
+    text-align: center; /* Pusatkan teks */
+    line-height: 1.6; /* Atur jarak antar baris teks */
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a; /* Warna teks yang lebih netral */
+}
+
+.reminder{
+    background-color: #accbe1;
+    padding: 5px 30px 20px 30px; /* Tambahkan ruang di dalam */
+    border-radius: 15px; /* Membuat sudut membulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+    max-width: 400px; /* Batas lebar maksimal */
+    width: 90%; /* Responsif pada layar kecil */
+    margin: 20px auto; /* Buat elemen terpusat */
+    text-align: center; /* Pusatkan teks */
+    line-height: 1.6; /* Atur jarak antar baris teks */
+    font-family: 'Montserrat', sans-serif;
+    color: #4a4a4a; /* Warna teks yang lebih netral */
+}
+
+/* Link */
+a {
+    background-color: #4a6479; /* Warna tombol */
+    color: #ffffff; /* Warna teks pada tombol */
+    padding: 10px 20px; /* Ruang dalam tombol */
+    border: none;
+    border-radius: 10px; /* Membuat sudut tombol membulat */
+    font-size: 1em; /* Ukuran font pada tombol */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #7c98b3;
+    transform: scale(1.1);
+}
+
+/* Tombol untuk Musik */
+#toggleSound {
+    background-color: #536b78;
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+    animation: bounce 1s infinite alternate;
+}
+
+#toggleSound:hover {
+    background-color: #637081;
+    transform: scale(1.1);
+}
+
+/* Media Query untuk Layar Kecil */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin: 20px;
+    }
+
+    .lengkap {
+        width: 90%; /* Sesuai ukuran layar kecil */
+        padding: 15px;
+    }
+
+    img {
+        width: 200px; /* Perkecil gambar */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        font-size: 0.9em; /* Perkecil ukuran teks */
+    }
+
+    #toggleSound {
+        font-size: 0.9em; /* Perkecil ukuran tombol */
+        padding: 10px 20px;
+    }
+}
